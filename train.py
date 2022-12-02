@@ -59,7 +59,7 @@ def main():
             ),
             ToTensorV2(),
         ],
-    )g
+    )
 
     val_transforms = A.Compose(
         [
