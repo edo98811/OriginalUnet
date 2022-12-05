@@ -60,12 +60,15 @@ if __name__ == '__main__':
     print(f"Length of train dataloader: {len(dataloader_test)} batches of {BATCH_SIZE}")
     print(f"Length of test dataloader: {len(dataloader_train)} batches of {BATCH_SIZE}")
 
+    img = dataset_test.__getitem__(3)
+
+    print(f"l'immagine e di tipo{type(img)} e dimensione{img.shape}")
     # Check out what's inside the training dataloader
     train_features_batch, train_labels_batch = next(iter(dataloader_train))
     train_features_batch.shape, train_labels_batch.shape
 
     #model_0 = resnet50(weights=ResNet50_Weights.DEFAULT)
-    model_0 = UNET(in_channels=1, out_channels=1)
+    #model_0 = UNET(in_channels=1, out_channels=1)
 
 
     # Set the seed and start the timer

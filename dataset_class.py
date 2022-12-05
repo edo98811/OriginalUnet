@@ -47,8 +47,8 @@ class MriDataset(Dataset):
 
 
         # FIXME: aggiungere un controllo che i tipi di dati siano corretti, e aggiungere modo piu veloce di fare questo controllo
-        vol_img = read_img(self.dataset_list[img_n]).dataobj
-        vol_label = read_img(self.label_list[img_n]).dataobj
+        vol_img = np.array(read_img(self.dataset_list[img_n]).dataobj)
+        vol_label = np.array(read_img(self.label_list[img_n]).dataobj)
 
         if self.data_plane == 0:
             img = vol_img[img_idx,:,:]
