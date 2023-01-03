@@ -28,7 +28,6 @@ class MriDataset(Dataset):
 
         files = load_dict(data_file_path)
 
-        # TODO: migliorare questa cosa
         self.label_list = files["r_annot"][floor(split[0]*len(files["r_annot"])):floor(split[1]*len(files["r_annot"]))]
         self.dataset_list = files["r_img"][floor(split[0]*len(files["r_annot"])):floor(split[1]*len(files["r_annot"]))]
         self.img_dim = read_img(self.dataset_list[0]).shape[dim] # poi questo adrà modificato
